@@ -85,8 +85,12 @@ infoTab.style.backgroundColor = '#FFFFFF';
 // form parent:
 const infoForm = document.createElement('form');
 infoForm.action = '/action_page.php';
-infoForm.style.display = 'flex';
-infoForm.style.flexDirection = 'column';
+
+// title:
+const formHeader = document.createElement('h1');
+formHeader.textContent = 'Please Sign Up to receive our weekly newsletter!';
+formHeader.style.textAlign = 'center';
+infoTab.prepend(formHeader);
 
 // label first name element:
 const infoLabelFirst = document.createElement('label');
@@ -134,9 +138,21 @@ inputSubmit.type = 'submit';
 inputSubmit.value = 'Sign Up!';
 infoForm.appendChild(inputSubmit);
 
-infoTab.prepend(infoForm);
+//Maybe another time button:
+const maybeLater = document.createElement('div');
+maybeLater.className = 'maybe-later';
+maybeLater.textContent = 'Back to Page';
+infoForm.appendChild(maybeLater);
+
+infoTab.appendChild(infoForm);
 
 bodySelector.prepend(infoTab);
+
+
+//=== Create form events 
+
+
+
 
 // form template:
 

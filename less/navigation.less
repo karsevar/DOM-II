@@ -42,3 +42,25 @@
     }
   }
 } // .main-navigation
+
+// Form additions 
+form {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
+  input {
+    width: 500px;
+    height: 40px;
+  }
+  .form-submit {
+    .button-creator(200px, 45px, @button-bg, @white, 1.8rem);
+  }
+  .maybe-later {
+    .button-creator(200px, 45px, @button-bg, @white, 1.8rem);
+  }
+
+}
