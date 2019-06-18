@@ -202,6 +202,11 @@ inputSubmit.addEventListener('dblclick', event => {
 	event.stopPropagation();
 	infoForm.style.display = 'none';
 	formHeader.style.display = 'none';
+	const signUp = document.createElement('h1');
+	signUp.textContent = 'Thanks so Much for Signing up!';
+	signUp.style.textAlign = 'center';
+	signUp.style.marginTop = '100px';
+	infoTab.appendChild(signUp);
 })
 
 maybeLater.addEventListener('dblclick', event => {
@@ -216,6 +221,15 @@ console.log(signUpButtons);
 signUpButtons.forEach(signUpButton => signUpButton.addEventListener('click', event => {
 	infoTab.style.display = 'block';
 }));
+
+//=== Fun little experiment with select:
+// let largerText = document.querySelectorAll('p');
+
+// largerText.forEach(para => {
+// 	para.addEventListener('selectstart', event => {
+// 		event.target.style.fontSize = '1.8rem';
+// 	})
+// })
 
 
 
