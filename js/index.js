@@ -11,6 +11,12 @@ navBars.forEach(navBar => navBar.addEventListener('mouseleave', event => {
 	event.target.style.color = '#212529'
 }))
 
+const main_navigation = document.querySelector('.main-navigation');
+
+main_navigation.addEventListener('click', event => {
+	event.target.style.backgroundColor = '#17A2B8';
+})
+
 //=== Click event idea for navigation elements:
 const bodySelector = document.querySelector('body');
 const sorryTab = document.createElement('div');
@@ -52,6 +58,7 @@ sorryTab.appendChild(sorryButton);
 
 // Makes the sorryTab box appear on the screen as a block item.
 navBars.forEach(navBar => navBar.addEventListener('click', event => {
+	event.stopPropagation();
 	event.preventDefault();
 	sorryTab.style.display = 'block';
 }))
