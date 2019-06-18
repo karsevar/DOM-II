@@ -80,6 +80,7 @@ infoTab.style.position = 'fixed';
 infoTab.style.bottom = '10%';
 infoTab.style.left = '10%';
 infoTab.style.backgroundColor = '#FFFFFF';
+infoTab.style.display = 'none';
 
 
 // form parent:
@@ -148,12 +149,6 @@ infoTab.appendChild(infoForm);
 
 bodySelector.prepend(infoTab);
 
-
-//=== Create form events 
-
-
-
-
 // form template:
 
 /*
@@ -165,6 +160,33 @@ bodySelector.prepend(infoTab);
       <input class="form-submit" type="submit" value="Start A Project">
 </form>
 */
+
+
+//=== Create form events
+const homeSelector = document.querySelector('.home'); 
+
+let last_known_scroll_position = 0;
+let ticking = false;
+
+function doSomeThing(scroll_pos) {
+	// console.log(scroll_pos);
+	infoTab.style.display = 'block';
+}
+
+window.addEventListener('scroll', function(e) {
+	last_known_scroll_position = window.scrollY;
+
+	if(!ticking) {
+		window.requestAnimationFrame(function() {
+			doSomeThing(last_known_scroll_position);
+			ticking = false;
+		})
+
+		ticking = true;
+	}
+});
+
+
 
 
 
