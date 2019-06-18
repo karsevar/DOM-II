@@ -222,14 +222,43 @@ signUpButtons.forEach(signUpButton => signUpButton.addEventListener('click', eve
 	infoTab.style.display = 'block';
 }));
 
-//=== Fun little experiment with select:
-// let largerText = document.querySelectorAll('p');
+// === Fun little experiment load, blur and focus:
+window.addEventListener('load', event => {
+	alert('Page has Loaded!');
+});
 
-// largerText.forEach(para => {
-// 	para.addEventListener('selectstart', event => {
-// 		event.target.style.fontSize = '1.8rem';
-// 	})
-// })
+
+// focus:
+inputFirst.addEventListener('focus', event => {
+	event.target.style.backgroundColor = 'yellow';
+})
+
+inputLast.addEventListener('focus', event => {
+	event.target.style.backgroundColor = 'yellow';
+})
+
+inputEmail.addEventListener('focus', event => {
+	event.target.style.backgroundColor = 'yellow';
+})
+
+// blur:
+inputFirst.addEventListener('blur', event => {
+	event.target.style.backgroundColor = 'white';
+})
+
+inputLast.addEventListener('blur', event => {
+	event.target.style.backgroundColor = 'white';
+})
+
+inputEmail.addEventListener('blur', event => {
+	event.target.style.backgroundColor = 'white';
+})
+
+
+
+
+
+
 
 
 
