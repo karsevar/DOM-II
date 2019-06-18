@@ -186,6 +186,32 @@ window.addEventListener('scroll', function(e) {
 	}
 });
 
+infoTab.addEventListener('dblclick', event => {
+	infoTab.style.display = 'none';
+})
+
+inputSubmit.addEventListener('dblclick', event => {
+	event.preventDefault();
+	event.stopPropagation();
+	infoForm.style.display = 'none';
+	formHeader.style.display = 'none';
+})
+
+maybeLater.addEventListener('dblclick', event => {
+	event.stopPropagation();
+	infoTab.style.display = 'none';
+})
+
+//=== form events for the three sign me up! buttons:
+const signUpButtons = document.querySelectorAll('.btn');
+console.log(signUpButtons);
+
+signUpButtons.forEach(signUpButton => signUpButton.addEventListener('click', event => {
+	infoTab.style.display = 'block';
+}));
+
+
+
 
 
 
